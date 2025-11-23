@@ -4,3 +4,4 @@ all : $(NAME)
 
 clean :
 
+fclean :
