@@ -4,6 +4,7 @@ all : $(NAME)
 
 clean :
 
-fclean :
+fclean : clean
+	rm $(NAME)
 
-re :
+re : fclean all
