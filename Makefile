@@ -1,4 +1,7 @@
 NAME = push_swap
+CC = cc
+FLAGS = -Wall -Wextra -Werror
+src = main.c
 
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -8,6 +11,7 @@ PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(PRINTF)
+	$(CC) $(FLAGS) main.c $(LIBFT) $(PRINTF) -o $(NAME)
 
 $(LIBFT) :
 	make -C $(LIBFT_DIR) bonus
