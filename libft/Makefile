@@ -18,7 +18,8 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 clean :
-	rm -f *.o
+	rm -f $(OBJ)
+	rm -f $(OBJBONUS)
 
 fclean : clean
 	rm -f $(NAME)
