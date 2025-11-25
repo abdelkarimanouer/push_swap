@@ -1,5 +1,4 @@
-#include "ft_printf/ft_printf.h"
-#include "utils.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -29,7 +28,7 @@ int	main(int argc, char **argv)
 		i = 0;
 		while (i < 10)
 		{
-			ft_printf("%d", arr[i]);
+			ft_printf("%d ", arr[i]);
 			i++;
 		}
 		ft_printf("\n");

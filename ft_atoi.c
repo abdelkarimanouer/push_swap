@@ -6,11 +6,11 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/25 13:45:45 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/25 19:50:04 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "push_swap.h"
 
 static int	is_null_or_empty(const char *str)
 {

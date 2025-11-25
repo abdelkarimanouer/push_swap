@@ -1,15 +1,16 @@
 NAME = push_swap
 CC = cc
 FLAGS = -Wall -Wextra -Werror
-src = main.c ft_atoi.c
+SRC = main.c ft_atoi.c
+INC = utils.h
 
 FT_PRINTF_DIR = ./ft_printf
 PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 all : $(NAME)
 
-$(NAME) : $(PRINTF)
-	$(CC) $(FLAGS) $(src) $(PRINTF) -o $(NAME)
+$(NAME) : $(PRINTF) $(INC)
+	$(CC) $(FLAGS) $(SRC) $(PRINTF) -o $(NAME)
 
 $(PRINTF) :
 	make -C $(FT_PRINTF_DIR)
