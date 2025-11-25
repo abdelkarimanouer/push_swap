@@ -22,16 +22,8 @@ int	main(int argc, char **argv)
 			}
 			else
 				arr[i - 1] = ft_atoi(argv[i], &failed);
-			
 			i++;
 		}
-		i = 0;
-		while (i < 10)
-		{
-			ft_printf("%d ", arr[i]);
-			i++;
-		}
-		ft_printf("\n");
 	}
 
 	return (0);
