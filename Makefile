@@ -2,7 +2,7 @@ NAME = push_swap
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 SRC = main.c ft_atoi.c
-INC = utils.h
+INC = push_swap.h
 
 FT_PRINTF_DIR = ./ft_printf
 PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
