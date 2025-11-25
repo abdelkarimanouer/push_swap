@@ -6,11 +6,11 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/26 14:29:46 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/25 13:45:45 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 static int	is_null_or_empty(const char *str)
 {
@@ -37,7 +37,13 @@ static int	skipp_ws_sign(const char *str, int *sign)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+static void is_failed(char c, int *failed)
+{
+	if (c <= '0' || c >= '9')
+		*failed = 1;
+}
+
+int	ft_atoi(const char *str, int *failed)
 {
 	int			i;
 	long		rs;
@@ -62,5 +68,6 @@ int	ft_atoi(const char *str)
 		}
 		i++;
 	}
+	is_failed(str[i], failed);
 	return ((int)(rs * sign));
 }

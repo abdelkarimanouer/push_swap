@@ -1,9 +1,39 @@
-#include "libft/libft.h"
 #include "ft_printf/ft_printf.h"
+#include "utils.h"
 
 int	main(int argc, char **argv)
 {
-	
+	int arr[10] = {0};
+	int i = 1;
+	int failed = 0;
+
+	if (argc > 1)
+	{
+		while (i < argc)
+		{
+			if (ft_atoi(argv[i], &failed) == 0)
+			{
+				if (failed == 1)
+				{
+					ft_printf("Error\n");
+					return (1);
+				}
+				else
+					arr[i - 1] = 0;
+			}
+			else
+				arr[i - 1] = ft_atoi(argv[i], &failed);
+			
+			i++;
+		}
+		i = 0;
+		while (i < 10)
+		{
+			ft_printf("%d", arr[i]);
+			i++;
+		}
+		ft_printf("\n");
+	}
 
 	return (0);
 }
