@@ -1,7 +1,8 @@
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 SRC = main.c ft_atoi.c
+OBJ = $(SRC:%.c=%.o)
 INC = push_swap.h
 
 FT_PRINTF_DIR = ./ft_printf
@@ -9,18 +10,22 @@ PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 all : $(NAME)
 
-$(NAME) : $(PRINTF) $(INC)
-	$(CC) $(FLAGS) $(SRC) $(PRINTF) -o $(NAME)
+$(NAME) : $(OBJ) $(PRINTF)
+	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) -o $(NAME)
+
+%.o : %.c $(INC)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(PRINTF) :
 	make -C $(FT_PRINTF_DIR)
 
 clean :
+	rm -f $(OBJ)
 	make -C $(FT_PRINTF_DIR) clean
 
 fclean : clean
 	make -C $(FT_PRINTF_DIR) fclean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re : fclean all
 
