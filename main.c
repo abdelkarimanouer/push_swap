@@ -10,18 +10,14 @@ int	main(int argc, char **argv)
 	{
 		while (i < argc)
 		{
-			if (ft_atoi(argv[i], &failed) == 0)
+			arr[i - 1] = ft_atoi(argv[i], &failed);
+			if (failed == 1)
 			{
-				if (failed == 1)
-				{
-					ft_printf("Error\n");
-					return (1);
-				}
-				else
-					arr[i - 1] = 0;
+				write(2, "Error\n", 6);
+				return (1);
 			}
 			else
-				arr[i - 1] = ft_atoi(argv[i], &failed);
+				failed = 0;
 			i++;
 		}
 	}
