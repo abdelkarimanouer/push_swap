@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	int arr[10] = {0};
 	int i = 1;
-	int failed = 0;
+	int *failed;
 
 	if (argc > 1)
 	{
@@ -21,5 +21,5 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-	return (0);
+	return (0); 
 }
