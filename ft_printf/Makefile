@@ -11,7 +11,7 @@ $(NAME) : $(OBJ)
 	ar rsc $(NAME) $(OBJ)
 
 %.o : %.c $(HEADERS)
-	$(CC) $(CFLAGS) -I. -c $< -o $@
+	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 clean :
 	rm -f $(OBJ)
