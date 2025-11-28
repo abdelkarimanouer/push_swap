@@ -6,34 +6,13 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 16:04:07 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/28 16:56:06 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	fill_stack(t_list **a, int data)
-{
-	t_list	*new;
-	t_list	*current;
-	
-	new = ft_new_node(data);
-	if (new == NULL)
-		return ;
-	if (*a == NULL)
-	{
-		*a = new;
-		return ;
-	}
-	current = *a;
-	while (current->next != NULL)
-		current = current->next;
-
-	current->next = new;
-	new->prev = current;
-}
-
-int	call_atoi(char	*arg)
+int	call_atoi(char	*arg, t_list **a, t_list **b)
 {
 	int	failed;
 	int	data;
@@ -43,7 +22,44 @@ int	call_atoi(char	*arg)
 	data = ft_atoi(arg, &failed);
 	if (failed == 1)
 		return (-1);
-	return data;
+	else
+		fill_stack(a, data);
+	
+	*b = NULL;
+
+	return (1);
+}
+
+int	get_numbers_from_strs(char **strs, t_list **a, t_list **b)
+{
+	int	rs;
+	int	failed;
+	
+	rs = 0;
+	failed = 0;
+	while (*strs++ != NULL)
+	{
+		rs = ft_atoi(*strs, &failed);
+		if (rs == -1)
+			return (-1);
+		else
+			fill_stack(a, rs);
+	}
+
+	*b = NULL;
+
+	return (1);
+}	
+
+int	call_split(char *arg, t_list **a, t_list **b)
+{
+	char **strs;
+
+	strs = ft_split(arg, ' ');
+	if (strs == NULL)
+		return (-1);
+	else
+		return get_numbers_from_strs(strs, a, b);
 }
 
 int	main(int argc, char **argv)
@@ -51,7 +67,6 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 	int		i;
-	int		data;
 
 	a = NULL;
 	b = NULL;
@@ -62,24 +77,11 @@ int	main(int argc, char **argv)
 		{
 			if (argc == 2)
 			{
-				// call split here.
-				// if (arr == NULL)
-				// {
-				// 	write(2, "Error\n", 6);
-				// 	return (1);
-				// }
+				if (call_split(argv[i], &a, &b) == -1)
+					return (write(2, "Error\n", 6), 1);
 			}
-			else
-			{
-				data = call_atoi(argv[i]);
-				if (data == -1)
-				{
-					write(2, "Error\n", 6);
-					return (1);
-				}
-				else
-					fill_stack(&a, data);
-			}
+			if (call_atoi(argv[i], &a, &b) == -1)
+					return (write(2, "Error\n", 6), 1);
 			i++;
 		}
 	}

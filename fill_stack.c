@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:07:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 16:04:26 by aanouer          ###   ########.fr       */
+/*   Created: 2025/11/28 16:08:45 by aanouer           #+#    #+#             */
+/*   Updated: 2025/11/28 16:18:28 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_new_node(void *data)
+t_list	*ft_new_node(int data)
 {
 	t_list	*node;
 
@@ -23,4 +23,24 @@ t_list	*ft_new_node(void *data)
 	node->data = data;
 	node->next = NULL;
 	return (node);
+}
+
+void	fill_stack(t_list **a, int data)
+{
+	t_list	*new;
+	t_list	*current;
+
+	new = ft_new_node(data);
+	if (new == NULL)
+		return ;
+	if (*a == NULL)
+	{
+		*a = new;
+		return ;
+	}
+	current = *a;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
+	new->prev = current;
 }
