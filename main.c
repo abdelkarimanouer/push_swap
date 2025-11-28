@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 16:58:05 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/28 17:08:24 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ int	call_atoi(char	*arg, t_list **a, t_list **b)
 		return (-1);
 	else
 		fill_stack(a, data);
-	
-	// remove this don't forget it
-	*b = NULL;
-
 	return (1);
 }
 
@@ -35,33 +31,32 @@ int	get_numbers_from_strs(char **strs, t_list **a, t_list **b)
 {
 	int	rs;
 	int	failed;
-	
+	int	i;
+
 	rs = 0;
 	failed = 0;
-	while (*strs++ != NULL)
+	i = 0;
+	while (strs[i] != NULL)
 	{
-		rs = ft_atoi(*strs, &failed);
-		if (rs == -1)
+		rs = ft_atoi(strs[i], &failed);
+		if (failed == 1)
 			return (-1);
 		else
 			fill_stack(a, rs);
+		i++;
 	}
-
-	// remove this don't forget it
-	*b = NULL;
-
 	return (1);
 }	
 
 int	call_split(char *arg, t_list **a, t_list **b)
 {
-	char **strs;
+	char	**strs;
 
 	strs = ft_split(arg, ' ');
 	if (strs == NULL)
 		return (-1);
 	else
-		return get_numbers_from_strs(strs, a, b);
+		return (get_numbers_from_strs(strs, a, b));
 }
 
 int	main(int argc, char **argv)
@@ -81,9 +76,11 @@ int	main(int argc, char **argv)
 			{
 				if (call_split(argv[i], &a, &b) == -1)
 					return (write(2, "Error\n", 6), 1);
+				else
+					break ;
 			}
-			if (call_atoi(argv[i], &a, &b) == -1)
-					return (write(2, "Error\n", 6), 1);
+			else if (call_atoi(argv[i], &a, &b) == -1)
+				return (write(2, "Error\n", 6), 1);
 			i++;
 		}
 	}
