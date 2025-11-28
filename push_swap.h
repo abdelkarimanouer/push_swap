@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 10:09:20 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/28 10:44:47 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include "ft_printf/ft_printf.h"
+
 
 typedef struct st_linked_list
 {
@@ -25,5 +26,8 @@ typedef struct st_linked_list
 
 int		ft_atoi(const char *str, int *failed);
 char	**ft_split(char const *s, char c);
+char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

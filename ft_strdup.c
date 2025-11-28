@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 10:39:11 by aanouer          ###   ########.fr       */
+/*   Created: 2025/10/15 16:32:23 by aanouer           #+#    #+#             */
+/*   Updated: 2025/11/28 10:43:11 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *s)
 {
-	t_list	*a;
-	t_list	*b;
 	int		i;
-	//int		failed;
-	char	**arr;
+	char	*copy;
+	size_t	len;
 
-	a = NULL;
-	b = NULL;
+	if (!s)
+		return (NULL);
 	i = 0;
-	if (argc > 1)
+	len = ft_strlen(s);
+	copy = malloc(len + 1);
+	if (copy == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		while (i < argc)
-		{
-			if (argc == 2)
-				arr = ft_split(argv[i], ' ');
-			else
-			{
-				//ft_atoi(argv[i], &failed);
-				/*if (failed == 1)
-				{
-					write(2, "Error\n", 6);
-					return (1);
-				}
-				*/
-			}
-			i++;
-		}
+		copy[i] = s[i];
+		i++;
 	}
-	return (0);
+	copy[i] = '\0';
+	return (copy);
 }
