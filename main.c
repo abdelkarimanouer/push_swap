@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 16:56:06 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/28 16:58:05 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	call_atoi(char	*arg, t_list **a, t_list **b)
 	else
 		fill_stack(a, data);
 	
+	// remove this don't forget it
 	*b = NULL;
 
 	return (1);
@@ -46,6 +47,7 @@ int	get_numbers_from_strs(char **strs, t_list **a, t_list **b)
 			fill_stack(a, rs);
 	}
 
+	// remove this don't forget it
 	*b = NULL;
 
 	return (1);
