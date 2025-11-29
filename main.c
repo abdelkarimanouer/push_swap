@@ -6,25 +6,11 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/29 09:59:35 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 10:15:02 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_dublicate(t_list **a, int data)
-{
-	t_list	*tmp;
-
-	tmp = *a;
-	while (tmp != NULL)
-	{
-		if (data == tmp->data)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
 
 int	call_atoi(char	*arg, t_list **a, t_list **b)
 {

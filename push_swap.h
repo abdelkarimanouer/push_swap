@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/29 09:57:54 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 10:16:49 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,20 @@ typedef struct st_linked_list
 	struct st_linked_list	*next;
 }	t_list;
 
-int		ft_atoi(const char *str, int *failed);
+// work with linked list
+t_list	*ft_new_node(int data);
+void	fill_stack(t_list **a, int data);
+void	free_stack(t_list **stack);
+
+// handle function
+int		is_dublicate(t_list **a, int data);
+
+// helper function
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-t_list	*ft_new_node(int data);
-void	fill_stack(t_list **a, int data);
+int		ft_atoi(const char *str, int *failed);
 void	free_strs(char **arr);
-void	free_stack(t_list **stack);
 
 #endif
