@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 10:14:15 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/29 10:21:31 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 20:48:37 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_dublicate(t_list **a, int data)
 	return (0);
 }
 
-int	call_atoi(char	*arg, t_list **a, t_list **b)
+int	call_atoi(char	*arg, t_list **a)
 {
 	int	failed;
 	int	data;
@@ -41,7 +41,7 @@ int	call_atoi(char	*arg, t_list **a, t_list **b)
 	return (1);
 }
 
-int	get_numbers_from_strs(char **strs, t_list **a, t_list **b)
+int	get_numbers_from_strs(char **strs, t_list **a)
 {
 	int	data;
 	int	failed;
@@ -63,7 +63,7 @@ int	get_numbers_from_strs(char **strs, t_list **a, t_list **b)
 	return (1);
 }
 
-int	call_split(char *arg, t_list **a, t_list **b)
+int	call_split(char *arg, t_list **a)
 {
 	char	**strs;
 
@@ -71,5 +71,5 @@ int	call_split(char *arg, t_list **a, t_list **b)
 	if (strs == NULL)
 		return (-1);
 	else
-		return (get_numbers_from_strs(strs, a, b));
+		return (get_numbers_from_strs(strs, a));
 }

@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/29 10:22:30 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 20:50:36 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	free_stack(t_list **stack);
 // handle and get inputs
 int		is_dublicate(t_list **a, int data);
 int		is_dublicate(t_list **a, int data);
-int		call_atoi(char	*arg, t_list **a, t_list **b);
-int		get_numbers_from_strs(char **strs, t_list **a, t_list **b);
-int		call_split(char *arg, t_list **a, t_list **b);
+int		call_atoi(char	*arg, t_list **a);
+int		get_numbers_from_strs(char **strs, t_list **a);
+int		call_split(char *arg, t_list **a);
 
 // helper function
 char	*ft_substr(char const *s, unsigned int start, size_t len);
