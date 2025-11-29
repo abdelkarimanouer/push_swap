@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:10:27 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 11:50:28 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 09:31:16 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	skip(size_t i, char c, char const *s)
 	return (i);
 }
 
-static void	free_arr(char **arr)
+void	free_strs(char **arr)
 {
 	size_t	index;
 
@@ -74,10 +74,10 @@ static int	fill_arr(char **arr, char const *s, char c)
 			start = i;
 			i = skip(i, c, s);
 			if (i == -1)
-				return (free_arr(arr), 0);
+				return (free_strs(arr), 0);
 			arr[index] = ft_substr(s, start, i - start);
 			if (!arr[index])
-				return (free_arr(arr), 0);
+				return (free_strs(arr), 0);
 			index++;
 		}
 		else

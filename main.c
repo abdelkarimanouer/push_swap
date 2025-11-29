@@ -6,11 +6,25 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 17:17:43 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 09:41:16 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_dublicate(t_list **a, int data)
+{
+	t_list	*tmp;
+
+	tmp = *a;
+	while (tmp != NULL)
+	{
+		if (data == tmp->data)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
 
 int	call_atoi(char	*arg, t_list **a, t_list **b)
 {
@@ -20,7 +34,7 @@ int	call_atoi(char	*arg, t_list **a, t_list **b)
 	data = 0;
 	failed = 0;
 	data = ft_atoi(arg, &failed);
-	if (failed == 1)
+	if (failed == 1 || is_dublicate(a, data))
 		return (-1);
 	else
 		fill_stack(a, data);
@@ -29,24 +43,25 @@ int	call_atoi(char	*arg, t_list **a, t_list **b)
 
 int	get_numbers_from_strs(char **strs, t_list **a, t_list **b)
 {
-	int	rs;
+	int	data;
 	int	failed;
 	int	i;
 
-	rs = 0;
+	data = 0;
 	failed = 0;
 	i = 0;
 	while (strs[i] != NULL)
 	{
-		rs = ft_atoi(strs[i], &failed);
-		if (failed == 1)
-			return (-1);
+		data = ft_atoi(strs[i], &failed);
+		if (failed == 1 || is_dublicate(a, data))
+			return (free_strs(strs), -1);
 		else
-			fill_stack(a, rs);
+			fill_stack(a, data);
 		i++;
 	}
+	free_strs(strs);
 	return (1);
-}	
+}
 
 int	call_split(char *arg, t_list **a, t_list **b)
 {
@@ -70,18 +85,19 @@ int	main(int argc, char **argv)
 	i = 1;
 	if (argc > 1)
 	{
-		while (i < argc)
+		if (argc == 2)
 		{
-			if (argc == 2)
-			{
-				if (call_split(argv[i], &a, &b) == -1)
-					return (write(2, "Error\n", 6), 1);
-				else
-					break ;
-			}
-			else if (call_atoi(argv[i], &a, &b) == -1)
+			if (call_split(argv[i], &a, &b) == -1)
 				return (write(2, "Error\n", 6), 1);
-			i++;
+		}
+		else
+		{
+			while (i < argc)
+			{
+				if (call_atoi(argv[i], &a, &b) == -1)
+					return (write(2, "Error\n", 6), 1);
+				i++;
+			}
 		}
 	}
 	return (0);

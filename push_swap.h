@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 16:19:24 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 09:31:27 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 t_list	*ft_new_node(int data);
 void	fill_stack(t_list **a, int data);
+void	free_strs(char **arr);
 
 #endif
