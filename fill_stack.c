@@ -6,11 +6,24 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 16:08:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 16:18:28 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/29 09:56:53 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_stack(t_list **stack)
+{
+	t_list	*current;
+
+	while (*stack != NULL)
+	{
+		current = (*stack)->next;
+		free(*stack);
+		(*stack) = current;
+	}
+	*stack = NULL;
+}
 
 t_list	*ft_new_node(int data)
 {
