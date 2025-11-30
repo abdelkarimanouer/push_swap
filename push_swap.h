@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/30 03:20:05 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/30 03:46:14 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@
 typedef struct st_linked_list
 {
 	int						data;
-	int						index;
-	int						target_index;
-	int						cost_a;
-	int						cost_b;
+	int						rank;
 	struct st_linked_list	*prev;
 	struct st_linked_list	*next;
 }	t_list;
