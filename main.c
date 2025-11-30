@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/30 03:15:35 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/30 05:09:30 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (start_and_fill_a(argc, argv, &a))
 		return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
+	get_ranks_of_nodes(&a);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
