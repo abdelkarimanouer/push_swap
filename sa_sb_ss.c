@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 05:28:13 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/30 06:02:19 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/30 20:42:22 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,23 @@ void	sa(t_list **a)
 
 void	sb(t_list **b)
 {
-	// code here
+	int	i;
+	int	tmp_data;
+	int	tmp_rank;
+	
+	if (count_stack(*b) <= 1)
+		return ;
+	i = 0;
+	tmp_data = (*b)->data;
+	tmp_rank = (*b)->rank;
+	(*b)->data = ((*b)->next)->data;
+	(*b)->rank = ((*b)->next)->rank;
+	((*b)->next)->data = tmp_data;
+	((*b)->next)->rank = tmp_rank;
 }
 
 void	ss(t_list **a, t_list **b)
 {
-	// code here
+	sa(a);
+	sb(b);
 }
