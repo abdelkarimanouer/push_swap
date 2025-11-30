@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/30 05:30:07 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/30 05:54:28 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_list	*ft_new_node(int data);
 void	fill_stack(t_list **a, int data);
 void	free_stack(t_list **stack);
 void	get_ranks_of_nodes(t_list **stack);
+int		count_stack(t_list *stack);
 
 // handle and get inputs
 int		is_dublicate(t_list **a, int data);

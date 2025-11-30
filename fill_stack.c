@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 16:08:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/30 04:59:00 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/30 05:54:01 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,19 @@ void	get_ranks_of_nodes(t_list **stack)
 		}
 		tmp = tmp->next;
 	}
+}
+
+int	count_stack(t_list *stack)
+{
+	int	count;
+
+	count = 0;
+	while (stack != NULL)
+	{
+		count++;
+		stack = stack->next;
+	}
+	return (count);
 }
 
 void	fill_stack(t_list **a, int data)
