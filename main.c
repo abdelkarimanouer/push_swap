@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/30 03:05:11 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/11/30 03:07:15 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (start_and_fill_a(argc, argv, &a))
-		return (1);
+		return (free_stack(&a), free_stack(&b), 1);
 
 	free_stack(&a);
 	free_stack(&b);	
