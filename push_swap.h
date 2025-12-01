@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 11:08:56 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/01 11:34:42 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,7 @@ int		is_dublicate(t_list **a, int data);
 int		call_atoi(char	*arg, t_list **a);
 int		get_numbers_from_strs(char **strs, t_list **a);
 int		call_split(char *arg, t_list **a);
-
-// helper function
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	**ft_split(char const *s, char c);
-char	*ft_strdup(const char *s);
-size_t	ft_strlen(const char *s);
-int		ft_atoi(const char *str, int *failed);
-void	free_strs(char **arr);
+int		check_if_stack_sort(t_list *a);
 
 //operations functions
 void	sa(t_list **a);
@@ -58,5 +51,13 @@ void	rr(t_list **a, t_list **b);
 void	rra(t_list **a);
 void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
+
+// helper function
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);
+int		ft_atoi(const char *str, int *failed);
+void	free_strs(char **arr);
 
 #endif
