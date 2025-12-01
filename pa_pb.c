@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 21:10:10 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 10:07:43 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/01 10:13:13 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	pa(t_list **a, t_list **b)
 void	pb(t_list **a, t_list **b)
 {
 	t_list	*tmp;
+
 	if (count_stack(*a) < 1)
 		return ;
 	tmp = *a;
