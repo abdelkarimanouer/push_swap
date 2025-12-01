@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 21:10:10 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 10:13:13 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/01 20:07:22 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	pa(t_list **a, t_list **b)
 
 	if (count_stack(*b) < 1)
 		return ;
+	ft_printf("pa\n");
 	tmp = *b;
 	*b = (*b)->next;
 	if (*b != NULL)
@@ -34,6 +35,7 @@ void	pb(t_list **a, t_list **b)
 
 	if (count_stack(*a) < 1)
 		return ;
+	ft_printf("pb\n");
 	tmp = *a;
 	*a = (*a)->next;
 	if (*a != NULL)
