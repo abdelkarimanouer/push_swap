@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/28 09:11:29 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/01 13:47:51 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	skipp_ws_sign(const char *str, int *sign)
 
 static void	is_failed(char c, int *failed)
 {
-	if ((c <= '0' || c >= '9') && c != '\0')
+	if ((c < '0' || c > '9') && c != '\0')
 		*failed = 1;
 	else
 		*failed = 0;
