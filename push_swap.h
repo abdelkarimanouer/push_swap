@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 10:14:46 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/01 10:32:53 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
+void	ra(t_list **a);
+void	rb(t_list **b);
+void	rr(t_list **a, t_list **b);
 
 #endif
