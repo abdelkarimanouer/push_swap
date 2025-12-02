@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 12:09:03 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/01 13:53:00 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(int argc, char **argv)
 	get_ranks_of_nodes(&a);
 	if (!check_if_stack_sort(a))
 	{
-		
 	}
 	free_stack(&a);
 	free_stack(&b);
