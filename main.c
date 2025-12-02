@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/02 23:11:31 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/02 23:32:23 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,32 @@ static int	start_and_fill_a(int argc, char **argv, t_list **a)
 	return (0);
 }
 
+static int	handle_3_case(t_list **a, t_list *max)
+{
+	t_list	*tmp;
+
+	tmp = *a;
+
+	if (!check_if_stack_sort(*a))
+	{
+		max = find_max_node_by_rank(*a);
+	}
+}
+
+static int	handle_2_3_case(t_list **a)
+{
+	t_list	*max;
+
+	if (count_stack(a) == 2)
+	{
+		if (!check_if_stack_sort(*a))
+			return (sa(&a), 1);
+	}
+	//if (count_stack(a) == 2)
+	//	handle_3_case(&a, max);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*a;
@@ -47,7 +73,7 @@ int	main(int argc, char **argv)
 		return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
 	get_ranks_of_nodes(&a);
 	set_index_of_nodes(&a);
-
+		
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
