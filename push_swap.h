@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/02 21:20:00 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/02 22:16:40 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct st_linked_list
 	int						rank;
 	int						index;
 	int						cost;
-	int						target;
+	struct st_linked_list	*target;
 	struct st_linked_list	*prev;
 	struct st_linked_list	*next;
 }	t_list;
@@ -33,6 +33,9 @@ void	fill_stack(t_list **a, int data);
 void	free_stack(t_list **stack);
 void	get_ranks_of_nodes(t_list **stack);
 int		count_stack(t_list *stack);
+t_list	*find_node_by_rank(t_list *stack, int rank);
+t_list	*find_min_node_by_rank(t_list *stack);
+t_list	*find_max_node_by_rank(t_list *stack);
 
 // handle and get inputs
 int		is_dublicate(t_list **a, int data);

@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 13:53:00 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/02 22:49:15 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ int	main(int argc, char **argv)
 	if (start_and_fill_a(argc, argv, &a))
 		return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
 	get_ranks_of_nodes(&a);
-	if (!check_if_stack_sort(a))
-	{
-	}
+
+	t_list	*max = find_max_node_by_rank(a);
+	if (max)
+		ft_printf("data: %d | rank: %d\n", max->data, max->rank);
+	
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
