@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/03 21:56:20 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/03 21:57:24 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ int	main(int argc, char **argv)
 		set_index_of_nodes(&a);
 		if (check_if_stack_sort(a))
 			return (free_stack(&a), free_stack(&b), 0);
-		if (!handle_2_3_case(&a))
-			return (1);
-			
+		if (handle_2_3_case(&a))
+			return (free_stack(&a), free_stack(&b), 0);
+
 		free_stack(&a);
 		free_stack(&b);
 	}
