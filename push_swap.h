@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/02 23:07:01 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/04 14:46:10 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ int		is_dublicate(t_list **a, int data);
 int		call_atoi(char	*arg, t_list **a);
 int		get_numbers_from_strs(char **strs, t_list **a);
 int		call_split(char *arg, t_list **a);
+
+// sorting
 int		check_if_stack_sort(t_list *a);
+void	sort_3(t_list **a);
+int		sort_2_3_nodes(t_list **a);
 
 //operations functions
 void	sa(t_list **a);

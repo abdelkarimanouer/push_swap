@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/04 14:21:35 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/04 14:47:12 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,34 +34,10 @@ static int	start_and_fill_a(int argc, char **argv, t_list **a)
 	return (0);
 }
 
-static void	handle_3_case(t_list **a)
-{
-	t_list	*max;
-
-	max = find_max_node_by_rank(*a);
-	if (max == *a)
-		ra(a);
-	else if (max == (*a)->next)
-		rra(a);
-	if ((*a)->data > (*a)->next->data)
-		sa(a);
-}
-
-static int	handle_2_3_case(t_list **a)
-{
-	if (count_stack(*a) == 2)
-	{
-		sa(a);
-		return (1);
-	}
-	if (count_stack(*a) == 3)
-	{
-		handle_3_case(a);
-		return (1);
-	}
-	else
-		return (0);
-}
+// static void	start_turk_algo(t_list **a, t_list **b)
+// {
+// 	//
+// }
 
 int	main(int argc, char **argv)
 {
@@ -78,8 +54,9 @@ int	main(int argc, char **argv)
 		set_index_of_nodes(&a);
 		if (check_if_stack_sort(a))
 			return (free_stack(&a), free_stack(&b), 0);
-		if (handle_2_3_case(&a))
+		if (sort_2_3_nodes(&a))
 			return (free_stack(&a), free_stack(&b), 0);
+		// start_turk_algo(&a, &b);
 		free_stack(&a);
 		free_stack(&b);
 	}
