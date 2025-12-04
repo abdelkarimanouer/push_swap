@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/04 13:59:29 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/04 14:12:00 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ static int	start_and_fill_a(int argc, char **argv, t_list **a)
 	return (0);
 }
 
-static void	handle_3_case(t_list **a, t_list *max)
+static void	handle_3_case(t_list **a)
 {
+	t_list	*max;
+
+	max = find_max_node_by_rank(*a);
 	if (max == *a)
 		ra(a);
 	else if (max == (*a)->next)
@@ -46,17 +49,14 @@ static void	handle_3_case(t_list **a, t_list *max)
 
 static int	handle_2_3_case(t_list **a)
 {
-	t_list	*max;
-
 	if (count_stack(*a) == 2)
 	{
 		sa(a);
 		return (1);
 	}
-	max = find_max_node_by_rank(*a);
 	if (count_stack(*a) == 3)
 	{
-		handle_3_case(a, max);
+		handle_3_case(a);
 		return (1);
 	}
 	else
