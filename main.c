@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/04 14:12:00 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/04 14:21:35 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int	main(int argc, char **argv)
 			return (free_stack(&a), free_stack(&b), 0);
 		if (handle_2_3_case(&a))
 			return (free_stack(&a), free_stack(&b), 0);
-
 		free_stack(&a);
 		free_stack(&b);
 	}
