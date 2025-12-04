@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/03 21:57:24 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/04 13:59:29 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,10 @@ static int	start_and_fill_a(int argc, char **argv, t_list **a)
 
 static void	handle_3_case(t_list **a, t_list *max)
 {
-	t_list	*tmp;
-
-	tmp = *a;
-	while (tmp && tmp != max)
-		tmp = tmp->next;
-	if (tmp == max)
-	{
-		if (max->prev)
-			max->prev->next = max->next;
-		else
-			*a = max->next;
-		if (max->next)
-			max->next->prev = max->prev;
-	}
-	tmp = *a;
-	while (tmp->next)
-		tmp = tmp->next;
-	if (tmp != max)
-	{
-		tmp->next = max;
-		max->prev = tmp;
-		max->next = NULL;
-	}
+	if (max == *a)
+		ra(a);
+	else if (max == (*a)->next)
+		rra(a);
 	if ((*a)->data > (*a)->next->data)
 		sa(a);
 }
