@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/04 14:47:12 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/04 16:55:17 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,15 @@ static int	start_and_fill_a(int argc, char **argv, t_list **a)
 	return (0);
 }
 
-// static void	start_turk_algo(t_list **a, t_list **b)
-// {
-// 	//
-// }
+static void	start_turk_algo(t_list **a, t_list **b)
+{
+	while (count_stack(*a) > 3)
+	{
+		set_index_of_nodes(a);
+		set_index_of_nodes(b);
+		(*a)->target = set_target_a(*a, *b);
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -56,7 +61,13 @@ int	main(int argc, char **argv)
 			return (free_stack(&a), free_stack(&b), 0);
 		if (sort_2_3_nodes(&a))
 			return (free_stack(&a), free_stack(&b), 0);
-		// start_turk_algo(&a, &b);
+		if (count_stack(a) > 3)
+		{
+			pb(&a, &b);
+			pb(&a, &b);
+			start_turk_algo(&a, &b);
+		}
+		
 		free_stack(&a);
 		free_stack(&b);
 	}
