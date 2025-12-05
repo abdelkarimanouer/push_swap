@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/05 20:36:11 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/05 20:44:39 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct st_linked_list
 t_list	*ft_new_node(int data);
 void	fill_stack(t_list **a, int data);
 void	free_stack(t_list **stack);
-void	get_ranks_of_nodes(t_list **stack);
+void	set_ranks_of_nodes(t_list **stack);
 int		count_stack(t_list *stack);
 t_list	*find_node_by_rank(t_list *stack, int rank);
 t_list	*find_min_node_by_rank(t_list *stack);
