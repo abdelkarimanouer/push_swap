@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/04 16:48:16 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/05 14:29:14 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int		call_split(char *arg, t_list **a);
 
 // sorting
 int		check_if_stack_sort(t_list *a);
-void	sort_3(t_list **a);
 int		sort_2_3_nodes(t_list **a);
 
 //operations functions
