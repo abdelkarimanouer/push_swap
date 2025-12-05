@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/05 14:29:25 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/05 14:59:12 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	start_and_fill_a(int argc, char **argv, t_list **a)
+static int	fill_a_by_inputs(int argc, char **argv, t_list **a)
 {
 	int		i;
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc > 1)
 	{
-		if (start_and_fill_a(argc, argv, &a))
+		if (fill_a_by_inputs(argc, argv, &a))
 			return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
 		get_ranks_of_nodes(&a);
 		set_index_of_nodes(&a);
