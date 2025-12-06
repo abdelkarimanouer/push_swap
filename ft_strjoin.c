@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:58:44 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 11:46:33 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/06 12:00:14 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	add_str(char *fullstr, unsigned int index, char const *s)
 	return (index);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	int		index;
 	size_t	lens1;
