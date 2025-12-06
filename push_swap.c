@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 21:38:02 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/06 21:51:25 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	sort_small_cases(t_list **a, t_list **b)
 		return (sort_2_3_nodes(a), 1);
 	else if (count_stack(*a) == 4)
 		return (sort_4_nodes(a, b), 1);
+	else if (count_stack(*a) == 5)
+		return (sort_5_nodes(a, b), 1);
 	else
 		return (0);
 }

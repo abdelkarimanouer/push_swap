@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:24:24 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 21:50:04 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/06 22:12:06 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,60 @@ void	sort_2_3_nodes(t_list **a)
 	}
 }
 
-void	sort_4_nodes(t_list**a, t_list **b)
+void	sort_4_nodes(t_list **a, t_list **b)
 {
-	t_list	*max;
+	t_list	*min;
 
-	max = find_max_node_by_rank(*a);
-	if (*a == max)
+	min = find_min_node_by_rank(*a);
+	if (*a == min)
 		pb(a, b);
-	else if ((*a)->next == max)
+	else if ((*a)->next == min)
 	{
 		sa(a);
 		pb(a, b);
 	}
-	else if ((*a)->next->next == max)
+	else if ((*a)->next->next == min)
 	{
 		rra(a);
 		rra(a);
 		pb(a, b);
 	}
-	else if ((*a)->next->next->next == max)
+	else if ((*a)->next->next->next == min)
 	{
 		rra(a);
 		pb(a, b);
 	}
-	sort_2_3_nodes(a);
+	if (!check_if_stack_sort(*a))
+		sort_2_3_nodes(a);
 	pa(a, b);
-	ra(a);
+}
+
+void	sort_5_nodes(t_list **a, t_list **b)
+{
+	t_list	*min;
+
+	min = find_min_node_by_rank(*a);
+	if (*a == min)
+		pb(a, b);
+	else if ((*a)->next == min)
+	{
+		sa(a);
+		pb(a, b);
+	}
+	else if ((*a)->next->next == min)
+	{
+		rra(a);
+		rra(a);
+		rra(a);
+		pb(a, b);
+	}
+	else if ((*a)->next->next->next == min)
+	{
+		rra(a);
+		rra(a);
+		pb(a, b);
+	}
+	if (check_if_stack_sort(*a))
+		sort_4_nodes(a, b);
+	pa(a, b);
 }
