@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 12:00:45 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/06 20:43:55 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *str, int *failed);
-char	*ft_strjoin(char *s1, char const *s2);
 void	free_strs(char **arr);
 
 #endif

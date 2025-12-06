@@ -6,63 +6,27 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 12:03:26 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/06 20:42:34 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_size_full_str(int argc, char **argv)
-{
-	int	i;
-	int	j;
-	int	size;
-
-	i = 1;
-	size = 0;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			size++;
-			j++;
-		}
-		if (argv[i][j] == '\0')
-			size++;
-		i++;
-	}
-	ft_printf("%d\n", size);
-	return (size);
-}
-
 static int	fill_a_by_inputs(int argc, char **argv, t_list **a)
 {
 	int		i;
-	char	*full_str;
 
 	i = 1;
-	if (argc == 2)
+	if (argc > 1)
 	{
 		if (argv[i][0] == '\0')
 			return (1);
-		if (call_split(argv[i], a) == -1)
-			return (1);
-	}
-	else
-	{
-		full_str = malloc(get_size_full_str(argc, argv) + 1);
-		if (full_str == NULL)
-			return (1);
 		while (i < argc)
 		{
-			full_str = ft_strjoin(full_str, argv[i]);
-			full_str = ft_strjoin(full_str, " ");
+			if (call_split(argv[i], a) == -1)
+				return (1);
 			i++;
 		}
-		if (call_split(full_str, a) == -1)
-			return (1);
-		ft_printf("%s\n", full_str);
 	}
 	return (0);
 }
