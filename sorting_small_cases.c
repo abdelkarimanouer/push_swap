@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:24:24 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/07 13:51:06 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/07 14:02:19 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	check_if_stack_sort(t_list *a)
 {
+	if (!a)
+		return (0);
 	while (a->next != NULL)
 	{
 		if (a->data > a->next->data)

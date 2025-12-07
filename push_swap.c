@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 21:51:25 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/07 14:01:16 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,15 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc > 1)
-	{
-		if (fill_a_by_inputs(argc, argv, &a))
-			return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
-		set_ranks_of_nodes(&a);
-		if (check_if_stack_sort(a))
-			return (free_stack(&a), free_stack(&b), 0);
-		if (sort_small_cases(&a, &b))
-			return (free_stack(&a), free_stack(&b), 0);
-		
-		free_stack(&a);
-		free_stack(&b);
-	}
+	if (fill_a_by_inputs(argc, argv, &a))
+		return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
+	set_ranks_of_nodes(&a);
+	if (check_if_stack_sort(a))
+		return (free_stack(&a), free_stack(&b), 0);
+	if (sort_small_cases(&a, &b))
+		return (free_stack(&a), free_stack(&b), 0);
+	
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }
