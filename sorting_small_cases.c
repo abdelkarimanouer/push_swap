@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:24:24 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 22:12:06 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/07 13:51:06 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,12 @@ void	sort_5_nodes(t_list **a, t_list **b)
 		rra(a);
 		pb(a, b);
 	}
-	if (check_if_stack_sort(*a))
+	else if ((*a)->next->next->next->next == min)
+	{
+		rra(a);
+		pb(a, b);
+	}
+	if (!check_if_stack_sort(*a))
 		sort_4_nodes(a, b);
 	pa(a, b);
 }
