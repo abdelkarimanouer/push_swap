@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 21:14:36 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/07 13:10:49 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	skipp_ws_sign(const char *str, int *sign)
 	int	i;
 
 	i = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == ' ')
+	while (str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
