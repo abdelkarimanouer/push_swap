@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/08 13:48:50 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/08 16:18:50 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ int	sort_small_cases(t_list **a, t_list **b)
 		return (0);
 }
 
+// static	start_algo_chunks(t_list **a, t_list **b)
+// {
+	
+// }
+
 int	main(int argc, char **argv)
 {
 	t_list	*a;
@@ -57,7 +62,7 @@ int	main(int argc, char **argv)
 		return (free_stack(&a), free_stack(&b), 0);
 	if (sort_small_cases(&a, &b))
 		return (free_stack(&a), free_stack(&b), 0);
-	
+	//start_algo_chunks(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

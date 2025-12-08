@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 10:14:15 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 20:51:38 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/08 17:28:43 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,6 @@ int	is_dublicate(t_list **a, int data)
 	return (0);
 }
 
-int	call_atoi(char	*arg, t_list **a)
-{
-	int	failed;
-	int	data;
-
-	data = 0;
-	failed = 0;
-	data = ft_atoi(arg, &failed);
-	if (failed == 1 || is_dublicate(a, data))
-		return (free_stack(a), -1);
-	else
-		fill_stack(a, data);
-	return (1);
-}
-
 int	get_numbers_from_strs(char **strs, t_list **a)
 {
 	int	data;
@@ -54,7 +39,7 @@ int	get_numbers_from_strs(char **strs, t_list **a)
 	{
 		data = ft_atoi(strs[i], &failed);
 		if (failed == 1 || is_dublicate(a, data))
-			return (free_stack(a), free_strs(strs), -1);
+			return (free_strs(strs), -1);
 		else
 			fill_stack(a, data);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:10:27 by aanouer           #+#    #+#             */
-/*   Updated: 2025/11/29 09:31:16 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/08 16:35:14 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,18 @@ static int	fill_arr(char **arr, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
+	int		size;
+	int		i;
 
 	if (!s)
 		return (NULL);
-	arr = malloc(sizeof(char *) * (getsize(s, c) + 1));
+	size = getsize(s, c) + 1;
+	arr = malloc(sizeof(char *) * size);
 	if (!arr)
 		return (NULL);
+	i = 0;
+	while (i < size)
+		arr[i++] = NULL;
 	if (fill_arr(arr, s, c))
 		return (arr);
 	else
