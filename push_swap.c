@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/08 16:18:50 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/09 16:07:01 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,55 @@ int	sort_small_cases(t_list **a, t_list **b)
 		return (0);
 }
 
-// static	start_algo_chunks(t_list **a, t_list **b)
-// {
-	
-// }
+static void	return_numbers_to_a(t_list **a, t_list **b)
+{
+	t_list	*max;
+	int		position_of_max;
+	int		size_b;
+
+	while (*b)
+	{
+		max = find_max_node_by_rank(*b);
+		position_of_max = get_node_position(*b, max);
+		size_b = count_stack(*b);
+		if (position_of_max <= size_b / 2)
+		{
+			while (position_of_max-- > 0)
+				rb(b);
+		}
+		else
+		{
+			while (position_of_max++ < size_b)
+				rrb(b);
+		}
+		pa(a, b);
+	}
+}
+
+static void	start_algo_chunks(t_list **a, t_list **b)
+{
+	int	pushed_count;
+	int	numbers_in_chunk;
+
+	pushed_count = 0;
+	if (count_stack(*a) <= 100)
+		numbers_in_chunk = 19;
+	else
+		numbers_in_chunk = 41;
+    while (*a)
+    {
+        if ((*a)->rank <= pushed_count + numbers_in_chunk)
+        {
+            pb(a, b);
+			if ((*b)->rank < pushed_count)
+				rb(b);
+            pushed_count++;
+        }
+        else
+            ra(a);
+    }
+	return_numbers_to_a(a, b);
+}
 
 int	main(int argc, char **argv)
 {
@@ -62,7 +107,7 @@ int	main(int argc, char **argv)
 		return (free_stack(&a), free_stack(&b), 0);
 	if (sort_small_cases(&a, &b))
 		return (free_stack(&a), free_stack(&b), 0);
-	//start_algo_chunks(&a, &b);
+	start_algo_chunks(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
