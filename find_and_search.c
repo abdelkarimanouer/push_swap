@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 21:32:05 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/07 13:46:55 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/09 15:49:11 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,19 @@ t_list	*find_max_node_by_rank(t_list *stack)
 		stack = stack->next;
 	}
 	return (max);
+}
+
+int	get_node_position(t_list *stack, t_list *target)
+{
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		if (stack == target)
+			return (pos);
+		pos++;
+		stack = stack->next;
+	}
+	return (-1);
 }
