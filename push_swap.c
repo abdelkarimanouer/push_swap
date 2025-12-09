@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:23:19 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/09 16:19:18 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/09 18:00:35 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ static void	start_algo_chunks(t_list **a, t_list **b)
 
 	pushed_count = 0;
 	if (count_stack(*a) <= 100)
-		numbers_in_chunk = 19;
+		numbers_in_chunk = 16;
 	else
-		numbers_in_chunk = 41;
+		numbers_in_chunk = 36;
 	while (*a)
 	{
 		if ((*a)->rank <= pushed_count + numbers_in_chunk)
