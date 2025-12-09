@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:16:44 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/01 20:08:09 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/09 18:05:11 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ra(t_list **a)
 	t_list	*tmp;
 	t_list	*current;
 
-	if (count_stack(*a) <= 1)
-		return ;
+	if (!a || !*a || !(*a)->next)
+    	return;
 	ft_printf("ra\n");
 	tmp = *a;
 	*a = (*a)->next;
@@ -37,8 +37,8 @@ void	rb(t_list **b)
 	t_list	*tmp;
 	t_list	*current;
 
-	if (count_stack(*b) <= 1)
-		return ;
+	if (!b || !*b || !(*b)->next)
+    	return;
 	ft_printf("rb\n");
 	tmp = *b;
 	*b = (*b)->next;

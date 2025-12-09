@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 16:08:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 10:29:49 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/09 18:07:43 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	count_stack(t_list *stack)
 {
 	int	count;
 
+	if (stack == NULL)
+		return (0);
 	count = 0;
 	while (stack != NULL)
 	{
