@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:09:57 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/06 21:51:57 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/09 15:49:56 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		count_stack(t_list *stack);
 t_list	*find_node_by_rank(t_list *stack, int rank);
 t_list	*find_min_node_by_rank(t_list *stack);
 t_list	*find_max_node_by_rank(t_list *stack);
+int		get_node_position(t_list *stack, t_list *target);
 
 // handle and get inputs
 int		is_dublicate(t_list **a, int data);
