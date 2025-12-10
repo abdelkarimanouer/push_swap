@@ -30,5 +30,4 @@ After the compilation is finished, you can run the program using (change the arg
 	- how the chunk algorithm works,
 	- the rules it follows,
 	- and example workflows of the algorithm.
-AI was not used to write code or to design the project logic.
-All code and implementation decisions were done manually.
+	- AI was not used to write code or to design the project logic. All code and implementation decisions were done manually.
