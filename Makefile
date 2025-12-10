@@ -6,26 +6,19 @@ sa_sb_ss.c pa_pb.c ra_rb_rr.c rra_rrb_rrr.c sorting_small_cases.c find_and_searc
 OBJ = $(SRC:%.c=%.o)
 INC = push_swap.h
 
-FT_PRINTF_DIR = ./ft_printf
-PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
-
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) -o $(NAME)
+$(NAME) : $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.c $(INC)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(PRINTF) :
-	make -C $(FT_PRINTF_DIR)
 
 clean :
 	rm -f $(OBJ)
-	make -C $(FT_PRINTF_DIR) clean
 
 fclean : clean
-	make -C $(FT_PRINTF_DIR) fclean
 	rm -f $(NAME)
 
 re : fclean all

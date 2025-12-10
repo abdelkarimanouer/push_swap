@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa_sb_ss.c                                         :+:      :+:    :+:   */
+/*   sa_sb_ss_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 05:28:13 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/10 11:56:18 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/10 11:37:55 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	sa(t_list **a)
 
 	if (count_stack(*a) <= 1)
 		return ;
-	write(1, "sa\n", 3);
 	tmp_data = (*a)->data;
 	tmp_rank = (*a)->rank;
 	(*a)->data = ((*a)->next)->data;
@@ -35,7 +34,6 @@ void	sb(t_list **b)
 
 	if (count_stack(*b) <= 1)
 		return ;
-	write(1, "sb\n", 3);
 	tmp_data = (*b)->data;
 	tmp_rank = (*b)->rank;
 	(*b)->data = ((*b)->next)->data;

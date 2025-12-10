@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   pa_pb_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 21:10:10 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/10 11:57:26 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/10 11:37:34 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	pa(t_list **a, t_list **b)
 
 	if (count_stack(*b) < 1)
 		return ;
-	write(1, "pa\n", 3);
 	tmp = *b;
 	*b = (*b)->next;
 	if (*b != NULL)
@@ -35,7 +34,6 @@ void	pb(t_list **a, t_list **b)
 
 	if (count_stack(*a) < 1)
 		return ;
-	write(1, "pb\n", 3);
 	tmp = *a;
 	*a = (*a)->next;
 	if (*a != NULL)

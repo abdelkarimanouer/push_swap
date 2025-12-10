@@ -1,53 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra_rrb_rrr.c                                      :+:      :+:    :+:   */
+/*   ra_rb_rr_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/01 10:52:56 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/10 11:57:36 by aanouer          ###   ########.fr       */
+/*   Created: 2025/12/01 10:16:44 by aanouer           #+#    #+#             */
+/*   Updated: 2025/12/10 11:37:44 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_list **a)
+void	ra(t_list **a)
 {
+	t_list	*tmp;
 	t_list	*current;
 
 	if (!a || !*a || !(*a)->next)
 		return ;
-	write(1, "rra\n", 4);
+	tmp = *a;
+	*a = (*a)->next;
+	if (*a != NULL)
+		(*a)->prev = NULL;
 	current = *a;
 	while (current->next != NULL)
 		current = current->next;
-	current->next = *a;
-	current->prev->next = NULL;
-	(*a)->prev = current;
-	current->prev = NULL;
-	(*a) = current;
+	tmp->next = NULL;
+	current->next = tmp;
+	tmp->prev = current;
 }
 
-void	rrb(t_list **b)
+void	rb(t_list **b)
 {
+	t_list	*tmp;
 	t_list	*current;
 
 	if (!b || !*b || !(*b)->next)
 		return ;
-	write(1, "rrb\n", 4);
+	tmp = *b;
+	*b = (*b)->next;
+	if (*b != NULL)
+		(*b)->prev = NULL;
 	current = *b;
 	while (current->next != NULL)
 		current = current->next;
-	current->next = *b;
-	current->prev->next = NULL;
-	(*b)->prev = current;
-	current->prev = NULL;
-	(*b) = current;
+	tmp->next = NULL;
+	current->next = tmp;
+	tmp->prev = current;
 }
 
-void	rrr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
-	rra(a);
-	rrb(b);
+	ra(a);
+	rb(b);
 }

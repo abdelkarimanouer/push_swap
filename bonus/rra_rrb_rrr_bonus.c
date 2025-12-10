@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra_rrb_rrr.c                                      :+:      :+:    :+:   */
+/*   rra_rrb_rrr_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:52:56 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/10 11:57:36 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/10 11:37:50 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	rra(t_list **a)
 
 	if (!a || !*a || !(*a)->next)
 		return ;
-	write(1, "rra\n", 4);
 	current = *a;
 	while (current->next != NULL)
 		current = current->next;
@@ -35,7 +34,6 @@ void	rrb(t_list **b)
 
 	if (!b || !*b || !(*b)->next)
 		return ;
-	write(1, "rrb\n", 4);
 	current = *b;
 	while (current->next != NULL)
 		current = current->next;
