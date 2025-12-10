@@ -15,7 +15,7 @@ Running the following command will compile all the source files and create the p
 ```bash
 make
 ```
-After the compilation is finished, you can run the program using (change the arg1 arg2 etc ... to numbers like this ./push_swap 22 33 11 44 55):
+After the compilation is finished, you can run the program using (change the arg1 arg2 ... to numbers like this ./push_swap 22 33 11 44 55 ...):
 ```
 ./push_swap arg1 arg2 arg3 ...
 ```
