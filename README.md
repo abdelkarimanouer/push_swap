@@ -9,16 +9,32 @@ The project focuses on algorithm design, optimization, and respecting strict con
 
 ## Instructions
 
-## Compilation
+### Compilation
 To build the project, use the Makefile included in the repository.
 Running the following command will compile all the source files and create the push_swap executable:
 ```bash
 make
 ```
-After the compilation is finished, you can run the program using (change the arg1 arg2 ... to numbers like this ./push_swap 22 33 11 44 55 ...):
-```
+### Execution
+After compilation, you can run the program by passing a list of integers as arguments:
+```bash
 ./push_swap arg1 arg2 arg3 ...
 ```
+Replace arg1 arg2 arg3 ... with the numbers you want to sort.
+
+### Error Handling
+The program checks for:
+
+- non-numeric values
+- duplicated numbers
+- values outside the 32-bit integer range
+- incorrect formatting
+
+If any error is found, the program will display:
+```
+Error
+```
+
 ## Resources
 - Peer learning and discussions with classmates and friends
 
