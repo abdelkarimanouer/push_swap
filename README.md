@@ -20,3 +20,15 @@ After the compilation is finished, you can run the program using (change the arg
 ./push_swap arg1 arg2 arg3 ...
 ```
 ## Resources
+- Peer learning and discussions with classmates and friends
+
+- Article explaining the chunk-based algorithm:
+[Link of Article](https://medium.com/@kilfenbaridon/how-to-over-optimize-an-algorithm-push-swap-42-school-project-d01a50e5fd78)
+
+- How AI Was Used:
+	- AI was used only for learning purposes, specifically to understand:
+	- how the chunk algorithm works,
+	- the rules it follows,
+	- and example workflows of the algorithm.
+AI was not used to write code or to design the project logic.
+All code and implementation decisions were done manually.
