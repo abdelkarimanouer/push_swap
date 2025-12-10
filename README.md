@@ -1,1 +1,1 @@
-<tr>Push_swap</tr>
+# <h1 align="center">Push Swap Project</h1>
