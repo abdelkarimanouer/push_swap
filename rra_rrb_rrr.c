@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:52:56 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/09 18:20:54 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/10 09:50:48 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rra(t_list **a)
 	t_list	*current;
 
 	if (!a || !*a || !(*a)->next)
-    	return;
+		return ;
 	ft_printf("rra\n");
 	current = *a;
 	while (current->next != NULL)
@@ -34,7 +34,7 @@ void	rrb(t_list **b)
 	t_list	*current;
 
 	if (!b || !*b || !(*b)->next)
-    	return;
+		return ;
 	ft_printf("rrb\n");
 	current = *b;
 	while (current->next != NULL)

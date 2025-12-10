@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:16:44 by aanouer           #+#    #+#             */
-/*   Updated: 2025/12/09 18:16:02 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/12/10 09:51:16 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ra(t_list **a)
 	t_list	*current;
 
 	if (!a || !*a || !(*a)->next)
-    	return ;
+		return ;
 	ft_printf("ra\n");
 	tmp = *a;
 	*a = (*a)->next;
@@ -38,7 +38,7 @@ void	rb(t_list **b)
 	t_list	*current;
 
 	if (!b || !*b || !(*b)->next)
-    	return;
+		return ;
 	ft_printf("rb\n");
 	tmp = *b;
 	*b = (*b)->next;
