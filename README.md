@@ -11,4 +11,4 @@ make
 
 ## Resources:
 
-[Google][google.com]
+[Google](google.com)
