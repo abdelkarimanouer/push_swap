@@ -1,5 +1,5 @@
 <h1 align="center">Push Swap Project</h1>
-_This project has been created as part of the 42 curriculum by **aanouer**._
+_This project has been created as part of the 42 curriculum by <aanouer>_
 
 ## Desciption:
 
@@ -11,4 +11,5 @@ make
 
 ## Resources:
 
-[Google](google.com)
+- [Google](google.com)
+- 2nd
