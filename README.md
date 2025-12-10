@@ -9,7 +9,14 @@ The project focuses on algorithm design, optimization, and respecting strict con
 
 ## Instructions
 
-### Compilation
-Use the Makefile provided:
+## Compilation
+To build the project, use the Makefile included in the repository.
+Running the following command will compile all the source files and create the push_swap executable:
 ```bash
 make
+```
+After the compilation is finished, you can run the program using (change the arg1 arg2 etc ... to numbers like this ./push_swap 22 33 11 44 55):
+```
+./push_swap arg1 arg2 arg3 ...
+```
+## Resources
